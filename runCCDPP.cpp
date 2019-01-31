@@ -15,5 +15,9 @@ int main(int argc, char **argv) {
     ccdpp.train();
     ccdpp.predict_test_data();
 
+    if (parameter.output) {
+        ccdpp.output();
+    }
+
     return 0;
 }

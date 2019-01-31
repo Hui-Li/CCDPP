@@ -487,6 +487,14 @@ public:
         value_type rmse = predict(test_ratings);
         cout << "RMSE of testing data: " << sqrt(rmse/test_rating_num) << endl;
     }
+
+    void output(){
+        // output can only be called after prediction! Then Q and P are collected from all the machines.
+        FileUtil::output_latent_factors(parameter->output_path + "/user-" + std::to_string(parameter->k) + ".dat", entire_Q, user_num, parameter->k);
+        cout << "User row-wise latent vectors are outputed to " << (parameter->output_path + "/user-" + std::to_string(parameter->k) + ".dat") << endl;
+        FileUtil::output_latent_factors(parameter->output_path + "/item-" + std::to_string(parameter->k) + ".dat", entire_P, item_num, parameter->k);
+        cout << "Item row-wise latent vectors are outputed to " << (parameter->output_path + "/item-" + std::to_string(parameter->k) + ".dat") << endl;
+    }
 };
 
 #endif //CCDPP_MPI_H

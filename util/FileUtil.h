@@ -184,5 +184,20 @@ namespace FileUtil {
 
     }
 
+    void output_latent_factors(const string output_file, const value_type *data, const int obj_num, const int dim){
+        // input is column-wise but output will be row-wise
+        ofstream fout;
+        fout.open(output_file);
+
+        for (int obj_id = 0; obj_id < obj_num; obj_id++) {
+            for (int d = 0; d < dim - 1; d++) {
+                fout << data[d * obj_num + obj_id] << ",";
+            }
+            fout << data[dim * obj_num + obj_id] << endl;
+        }
+
+        fout.close();
+    }
+
 }
 #endif //FILEUTIL_H

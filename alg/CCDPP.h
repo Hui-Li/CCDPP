@@ -353,6 +353,13 @@ public:
         predict(test_ratings, "RMSE of testing data: ");
     }
 
+    void output(){
+        FileUtil::output_latent_factors(parameter->output_path + "/user-" + std::to_string(parameter->k) + ".dat", Q, user_num, parameter->k);
+        cout << "User row-wise latent vectors are outputed to " << (parameter->output_path + "/user-" + std::to_string(parameter->k) + ".dat") << endl;
+        FileUtil::output_latent_factors(parameter->output_path + "/item-" + std::to_string(parameter->k) + ".dat", P, item_num, parameter->k);
+        cout << "Item row-wise latent vectors are outputed to " << (parameter->output_path + "/item-" + std::to_string(parameter->k) + ".dat") << endl;
+    }
+
 };
 
 #endif //CCDPP_H

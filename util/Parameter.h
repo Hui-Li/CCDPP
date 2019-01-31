@@ -14,6 +14,8 @@ public:
     int num_of_machine;
     int num_of_thread;
     string meta_path;
+    string output_path;
+    bool output;
     bool verbose;
 
     bool create(int argc, char **argv) {
@@ -28,7 +30,9 @@ public:
                 ("max_inner_iter", po::value<int>(&(Parameter::max_inner_iter))->default_value(5), "number of inner iterations")
                 ("node", po::value<int>(&(Parameter::num_of_machine))->default_value(1), "number of machines")
                 ("thread", po::value<int>(&(Parameter::num_of_thread))->default_value(4), "number of thread per machine")
-                ("data_folder", po::value<string>(&(Parameter::meta_path)), "file path of data folder containing meta file")
+                ("data_folder", po::value<string>(&(Parameter::meta_path))->default_value("../data/netflix/"), "file path of data folder containing meta file")
+                ("output_folder", po::value<string>(&(Parameter::output_path))->default_value("../output/netflix/"), "output folder path")
+                ("output", po::value<bool>(&(Parameter::output))->default_value(true), "whether output row-wise latent vectors")
                 ("verbose", po::value<bool>(&(Parameter::verbose))->default_value(true), "whether output information for debugging");
 
         po::variables_map vm;
