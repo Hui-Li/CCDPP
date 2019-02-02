@@ -3,6 +3,8 @@ C++ implementation of CCD++ presented in the following paper:
 
 *H. Yu, C. Hsieh, S. Si, and I. S. Dhillon. Scalable coordinate descent approaches to parallel matrix factorization for recommender systems. In ICDM, pages 765–774, 2012.*
 
+The C implementation from original author can be found [here](http://www.cs.utexas.edu/~rofuyu/libpmf/).
+ 
 ## Environment
 
 - Ubuntu 16.04

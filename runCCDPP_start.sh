@@ -6,9 +6,9 @@ cd build-ccdpp
 cmake ../
 make
 
-data_folder="/media/DataDisk/Code/MCRec/data/raw/Movielens"
-output_folder="/media/DataDisk/Code/MCRec/data/raw/Movielens"
-dimension="128"
+data_folder="../../mf_data/netflix"
+output_folder="../../output/netflix"
+dimension="40"
 lambda="0.05"
 max_iter="5"
 max_inner_iter="5"
